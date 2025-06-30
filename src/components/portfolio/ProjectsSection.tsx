@@ -1,4 +1,3 @@
-
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Button } from '@/components/ui/button';
@@ -105,7 +104,7 @@ const ProjectsSection = () => {
             <motion.div
               key={index}
               className="group"
-              initial={{ opacity: 0 }}
+              // Removed initial={{ opacity: 0 }} to make it visible by default
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ delay: index * 0.15, duration: 0.8 }}
             >
@@ -113,7 +112,7 @@ const ProjectsSection = () => {
                 {/* Left content */}
                 <motion.div
                   className={`space-y-6 ${index % 2 === 1 ? 'lg:order-2' : ''}`}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                  // Removed initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ delay: 0.2 + index * 0.1, duration: 0.8 }}
                 >
@@ -137,7 +136,7 @@ const ProjectsSection = () => {
                         <motion.li
                           key={outcomeIndex}
                           className="flex items-start group-hover:text-gray-800 transition-colors"
-                          initial={{ opacity: 0, x: -20 }}
+                          // Removed initial={{ opacity: 0, x: -20 }}
                           animate={isInView ? { opacity: 1, x: 0 } : {}}
                           transition={{ delay: 0.4 + index * 0.1 + outcomeIndex * 0.1, duration: 0.6 }}
                         >
@@ -163,7 +162,7 @@ const ProjectsSection = () => {
                     </h4>
                     <motion.div
                       className="flex flex-wrap gap-3"
-                      initial={{ opacity: 0, y: 20 }}
+                      // Removed initial={{ opacity: 0, y: 20 }}
                       animate={isInView ? { opacity: 1, y: 0 } : {}}
                       transition={{ delay: 0.6 + index * 0.1, duration: 0.8 }}
                     >
@@ -184,7 +183,7 @@ const ProjectsSection = () => {
 
                   {/* CTA Button */}
                   <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    // Removed initial={{ opacity: 0, y: 20 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ delay: 0.8 + index * 0.1, duration: 0.8 }}
                   >
@@ -200,7 +199,7 @@ const ProjectsSection = () => {
                 {/* Right content - Project visualization */}
                 <motion.div
                   className={`flex items-center justify-center ${index % 2 === 1 ? 'lg:order-1' : ''}`}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50 }}
+                  // Removed initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ delay: 0.4 + index * 0.1, duration: 0.8 }}
                 >
