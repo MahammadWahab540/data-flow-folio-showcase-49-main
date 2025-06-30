@@ -10,7 +10,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gray-950 text-foreground py-8 px-4 sm:px-6 lg:px-8">
+    <footer className="bg-background text-foreground py-8 px-4 sm:px-6 lg:px-8"> {/* Changed bg-gray-950 to bg-background */}
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center">
           {/* Copyright */}

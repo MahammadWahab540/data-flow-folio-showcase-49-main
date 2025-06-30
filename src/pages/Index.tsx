@@ -23,23 +23,11 @@ const Index = () => {
   const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
 
   return (
-    <div className="relative">
+    <div className="relative bg-background"> {/* Changed to bg-background */}
       {/* Navigation */}
       <Navigation scrollY={scrollY} />
       
-      {/* Background gradient transitions */}
-      <motion.div 
-        className="fixed inset-0 z-0"
-        style={{
-          background: `linear-gradient(180deg, 
-            hsl(var(--background)) 0%, 
-            hsl(240 5.9% 10% / 0.8) 20%, /* Dark blue/gray */
-            hsl(260 5.9% 15% / 0.8) 40%, /* Darker purple/gray */
-            hsl(var(--background)) 60%, 
-            hsl(240 5.9% 10% / 0.7) 80%, 
-            hsl(220 10% 5% / 0.95) 100%)` /* Very dark at the bottom */
-        }}
-      />
+      {/* Removed fixed background gradient, main content will use bg-background */}
 
       {/* Main content */}
       <main className="relative z-10">

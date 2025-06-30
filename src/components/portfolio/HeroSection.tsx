@@ -25,7 +25,7 @@ const HeroSection = () => {
             </div>
             
             <motion.h1
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4"
+              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-4" // Changed to text-foreground
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
@@ -34,7 +34,7 @@ const HeroSection = () => {
             </motion.h1>
             
             <motion.h2
-              className="text-xl sm:text-2xl lg:text-3xl font-semibold text-blue-600 mb-6"
+              className="text-xl sm:text-2xl lg:text-3xl font-semibold text-primary mb-6" // Changed to text-primary
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
@@ -43,7 +43,7 @@ const HeroSection = () => {
             </motion.h2>
             
             <motion.p
-              className="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0"
+              className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto lg:mx-0" // Changed to text-muted-foreground
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}
@@ -58,7 +58,7 @@ const HeroSection = () => {
               transition={{ delay: 0.8, duration: 0.8 }}
             >
               <motion.button
-                className="px-8 py-3 bg-gradient-to-r from-teal-600 to-blue-600 text-white font-semibold rounded-lg hover:from-teal-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                className="px-8 py-3 bg-gradient-to-r from-primary to-blue-600 text-white font-semibold rounded-lg hover:from-primary/80 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg" // Changed from-teal-600 to from-primary
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -66,7 +66,7 @@ const HeroSection = () => {
               </motion.button>
               
               <motion.button
-                className="px-8 py-3 border-2 border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                className="px-8 py-3 border-2 border-primary text-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-all duration-300 transform hover:scale-105 hover:shadow-lg" // Changed border-blue-600 and text-blue-600 to primary
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >

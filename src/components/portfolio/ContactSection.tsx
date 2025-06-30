@@ -7,7 +7,7 @@ const ContactSection = () => {
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
-    <div ref={ref} className="min-h-screen flex items-center py-20 px-4 sm:px-6 lg:px-8 bg-gray-950 relative overflow-hidden">
+    <div ref={ref} className="min-h-screen flex items-center py-20 px-4 sm:px-6 lg:px-8 bg-background relative overflow-hidden"> {/* Changed bg-gray-950 to bg-background */}
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-gradient-to-r from-primary to-blue-600"></div>
