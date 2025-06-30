@@ -1,9 +1,8 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { SplineScene } from '@/components/ui/spline';
 import { Card } from '@/components/ui/card';
-import { Spotlight } from '@/components/ui/spotlight';
+// Removed: import { Spotlight } from '@/components/ui/spotlight';
 
 const HeroSection = () => {
   return (
@@ -83,19 +82,16 @@ const HeroSection = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-            <Card className="w-full max-w-md h-96 bg-black/[0.96] relative overflow-hidden">
-              <Spotlight
-                className="-top-40 left-0 md:left-60 md:-top-20"
-                fill="white"
-              />
+            <Card className="w-full max-w-md h-96 bg-card relative overflow-hidden">
+              {/* Removed: Spotlight component */}
               
               <div className="flex h-full">
                 {/* Left content overlay */}
                 <div className="absolute top-4 left-4 z-10">
-                  <h3 className="text-lg font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
+                  <h3 className="text-lg font-bold text-foreground">
                     Interactive 3D
                   </h3>
-                  <p className="text-xs text-neutral-300 max-w-32">
+                  <p className="text-xs text-muted-foreground max-w-32">
                     Data visualization in action
                   </p>
                 </div>
