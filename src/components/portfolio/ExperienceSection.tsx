@@ -1,4 +1,3 @@
-
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 
@@ -54,10 +53,10 @@ const ExperienceSection = () => {
   ];
 
   return (
-    <div ref={ref} className="min-h-screen flex items-center py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+    <div ref={ref} className="min-h-screen flex items-center py-20 px-4 sm:px-6 lg:px-8 bg-background text-foreground">
       <div className="max-w-4xl mx-auto w-full">
         <motion.h2
-          className="text-4xl font-bold text-center mb-16 text-gray-900"
+          className="text-4xl font-bold text-foreground text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
@@ -69,7 +68,7 @@ const ExperienceSection = () => {
         <div className="relative">
           {/* Central timeline line */}
           <motion.div
-            className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-teal-600 to-blue-600"
+            className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary to-blue-600"
             initial={{ scaleY: 0 }}
             animate={isInView ? { scaleY: 1 } : {}}
             transition={{ delay: 0.2, duration: 1.5, ease: "easeOut" }}
@@ -88,7 +87,7 @@ const ExperienceSection = () => {
               >
                 {/* Timeline node */}
                 <motion.div
-                  className="w-16 h-16 bg-gradient-to-r from-teal-600 to-blue-600 rounded-full flex items-center justify-center shadow-lg z-10 flex-shrink-0"
+                  className="w-16 h-16 bg-gradient-to-r from-primary to-blue-600 rounded-full flex items-center justify-center shadow-lg z-10 flex-shrink-0"
                   initial={{ scale: 0 }}
                   animate={isInView ? { scale: 1 } : {}}
                   transition={{ delay: 0.6 + index * 0.2, type: "spring", stiffness: 200 }}
@@ -99,7 +98,7 @@ const ExperienceSection = () => {
 
                 {/* Experience card */}
                 <motion.div
-                  className="ml-8 bg-white p-6 rounded-xl shadow-lg border border-gray-100 flex-1"
+                  className="ml-8 bg-card p-6 rounded-xl shadow-lg border border-border flex-1"
                   whileHover={{ 
                     scale: 1.02, 
                     y: -4,
@@ -109,10 +108,10 @@ const ExperienceSection = () => {
                 >
                   <div className="flex justify-between items-start mb-4">
                     <div>
-                      <h3 className="text-xl font-semibold text-gray-900">{exp.title}</h3>
-                      <p className="text-lg text-teal-600 font-medium">{exp.company}</p>
+                      <h3 className="text-xl font-semibold text-foreground">{exp.title}</h3>
+                      <p className="text-lg text-primary font-medium">{exp.company}</p>
                     </div>
-                    <span className="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
+                    <span className="text-sm text-muted-foreground bg-secondary px-3 py-1 rounded-full">
                       {exp.dates}
                     </span>
                   </div>
@@ -121,13 +120,13 @@ const ExperienceSection = () => {
                     {exp.responsibilities.map((responsibility, respIndex) => (
                       <motion.li
                         key={respIndex}
-                        className="flex items-start text-gray-600"
+                        className="flex items-start text-muted-foreground"
                         initial={{ opacity: 0, x: -20 }}
                         animate={isInView ? { opacity: 1, x: 0 } : {}}
                         transition={{ delay: 0.8 + index * 0.2 + respIndex * 0.1, duration: 0.5 }}
                       >
                         <motion.span
-                          className="text-teal-600 mr-3 mt-1"
+                          className="text-primary mr-3 mt-1"
                           initial={{ scale: 0 }}
                           animate={isInView ? { scale: 1 } : {}}
                           transition={{ delay: 1 + index * 0.2 + respIndex * 0.1, type: "spring" }}

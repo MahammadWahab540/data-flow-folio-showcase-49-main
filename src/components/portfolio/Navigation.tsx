@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
@@ -29,7 +28,7 @@ const Navigation: React.FC<NavigationProps> = ({ scrollY }) => {
     <motion.nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrollY > 100 
-          ? 'bg-white/90 backdrop-blur-md shadow-lg' 
+          ? 'bg-background/90 backdrop-blur-md shadow-lg' 
           : 'bg-transparent'
       }`}
       initial={{ y: -100 }}
@@ -40,7 +39,7 @@ const Navigation: React.FC<NavigationProps> = ({ scrollY }) => {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <motion.div
-            className="text-2xl font-bold bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent"
+            className="text-2xl font-bold bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent"
             whileHover={{ scale: 1.05 }}
           >
             ARN
@@ -52,13 +51,13 @@ const Navigation: React.FC<NavigationProps> = ({ scrollY }) => {
               <motion.button
                 key={item.name}
                 onClick={() => handleNavClick(item.href)}
-                className="text-gray-700 hover:text-blue-600 transition-colors relative"
+                className="text-foreground hover:text-primary transition-colors relative"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 {item.name}
                 <motion.div
-                  className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-teal-600 to-blue-600"
+                  className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary to-blue-600"
                   initial={{ scaleX: 0 }}
                   whileHover={{ scaleX: 1 }}
                   transition={{ duration: 0.3 }}
@@ -69,13 +68,13 @@ const Navigation: React.FC<NavigationProps> = ({ scrollY }) => {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden text-gray-700"
+            className="md:hidden text-foreground"
             onClick={() => setIsOpen(!isOpen)}
           >
             <div className="w-6 h-6 flex flex-col justify-center">
-              <span className={`block h-0.5 w-6 bg-gray-700 transition-transform ${isOpen ? 'rotate-45 translate-y-1' : ''}`} />
-              <span className={`block h-0.5 w-6 bg-gray-700 mt-1 transition-opacity ${isOpen ? 'opacity-0' : ''}`} />
-              <span className={`block h-0.5 w-6 bg-gray-700 mt-1 transition-transform ${isOpen ? '-rotate-45 -translate-y-1' : ''}`} />
+              <span className={`block h-0.5 w-6 bg-foreground transition-transform ${isOpen ? 'rotate-45 translate-y-1' : ''}`} />
+              <span className={`block h-0.5 w-6 bg-foreground mt-1 transition-opacity ${isOpen ? 'opacity-0' : ''}`} />
+              <span className={`block h-0.5 w-6 bg-foreground mt-1 transition-transform ${isOpen ? '-rotate-45 -translate-y-1' : ''}`} />
             </div>
           </button>
         </div>
@@ -84,7 +83,7 @@ const Navigation: React.FC<NavigationProps> = ({ scrollY }) => {
       {/* Mobile Navigation */}
       {isOpen && (
         <motion.div
-          className="md:hidden bg-white/95 backdrop-blur-md border-t"
+          className="md:hidden bg-background/95 backdrop-blur-md border-t border-border"
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: 'auto' }}
           exit={{ opacity: 0, height: 0 }}
@@ -94,7 +93,7 @@ const Navigation: React.FC<NavigationProps> = ({ scrollY }) => {
               <button
                 key={item.name}
                 onClick={() => handleNavClick(item.href)}
-                className="block w-full text-left py-2 text-gray-700 hover:text-blue-600 transition-colors"
+                className="block w-full text-left py-2 text-foreground hover:text-primary transition-colors"
               >
                 {item.name}
               </button>
@@ -106,7 +105,7 @@ const Navigation: React.FC<NavigationProps> = ({ scrollY }) => {
       {/* Gradient stripe for scrolled state */}
       {scrollY > 100 && (
         <motion.div
-          className="h-1 bg-gradient-to-r from-teal-600 to-blue-600"
+          className="h-1 bg-gradient-to-r from-primary to-blue-600"
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ duration: 0.5 }}

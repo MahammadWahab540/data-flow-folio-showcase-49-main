@@ -1,5 +1,4 @@
-
-import React, { useRef } from 'react';
+import React, { useRef } => 'react';
 import { motion, useInView } from 'framer-motion';
 
 const EducationSection = () => {
@@ -13,10 +12,10 @@ const EducationSection = () => {
   ];
 
   return (
-    <div ref={ref} className="min-h-screen flex items-center py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <div ref={ref} className="min-h-screen flex items-center py-20 px-4 sm:px-6 lg:px-8 bg-background text-foreground">
       <div className="max-w-7xl mx-auto w-full">
         <motion.h2
-          className="text-4xl font-bold text-center mb-16 text-gray-900"
+          className="text-4xl font-bold text-center mb-16 text-foreground"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
@@ -31,26 +30,26 @@ const EducationSection = () => {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
-            <h3 className="text-2xl font-semibold text-gray-900 mb-8">Education</h3>
+            <h3 className="text-2xl font-semibold text-foreground mb-8">Education</h3>
             
             <div className="space-y-6">
               <motion.div
-                className="bg-gradient-to-r from-teal-50 to-blue-50 p-6 rounded-xl border border-gray-200"
+                className="bg-card p-6 rounded-xl border border-border"
                 whileHover={{ scale: 1.02, y: -2 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <div className="flex items-start space-x-4">
                   <motion.div
-                    className="w-12 h-12 bg-gradient-to-r from-teal-600 to-blue-600 rounded-lg flex items-center justify-center flex-shrink-0"
+                    className="w-12 h-12 bg-gradient-to-r from-primary to-blue-600 rounded-lg flex items-center justify-center flex-shrink-0"
                     whileHover={{ scale: 1.1, rotate: 5 }}
                   >
                     <span className="text-white font-bold">🎓</span>
                   </motion.div>
                   <div>
-                    <h4 className="text-lg font-semibold text-gray-900">Master's in Business Analytics</h4>
-                    <p className="text-teal-600 font-medium">Webster University • 2022</p>
-                    <p className="text-sm text-gray-600 mt-1">GPA: 3.6/4.0</p>
-                    <p className="text-sm text-gray-500 mt-2">
+                    <h4 className="text-lg font-semibold text-foreground">Master's in Business Analytics</h4>
+                    <p className="text-primary font-medium">Webster University • 2022</p>
+                    <p className="text-sm text-muted-foreground mt-1">GPA: 3.6/4.0</p>
+                    <p className="text-sm text-muted-foreground mt-2">
                       Relevant coursework: Statistical Analysis, Data Mining, Business Intelligence, 
                       Predictive Analytics, Database Management
                     </p>
@@ -59,7 +58,7 @@ const EducationSection = () => {
               </motion.div>
 
               <motion.div
-                className="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-xl border border-gray-200"
+                className="bg-card p-6 rounded-xl border border-border"
                 whileHover={{ scale: 1.02, y: -2 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
@@ -71,10 +70,10 @@ const EducationSection = () => {
                     <span className="text-white font-bold">📚</span>
                   </motion.div>
                   <div>
-                    <h4 className="text-lg font-semibold text-gray-900">Bachelor of Business Administration</h4>
-                    <p className="text-blue-600 font-medium">State University • 2020</p>
-                    <p className="text-sm text-gray-600 mt-1">GPA: 3.4/4.0</p>
-                    <p className="text-sm text-gray-500 mt-2">
+                    <h4 className="text-lg font-semibold text-foreground">Bachelor of Business Administration</h4>
+                    <p className="text-blue-500 font-medium">State University • 2020</p>
+                    <p className="text-sm text-muted-foreground mt-1">GPA: 3.4/4.0</p>
+                    <p className="text-sm text-muted-foreground mt-2">
                       Concentration: Finance and Analytics, Minor in Computer Science
                     </p>
                   </div>
@@ -89,13 +88,13 @@ const EducationSection = () => {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-            <h3 className="text-2xl font-semibold text-gray-900 mb-8">Certifications</h3>
+            <h3 className="text-2xl font-semibold text-foreground mb-8">Certifications</h3>
             
             <div className="space-y-4">
               {certifications.map((cert, index) => (
                 <motion.div
                   key={index}
-                  className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 cursor-pointer perspective-1000"
+                  className="bg-card p-6 rounded-xl shadow-lg border border-border cursor-pointer perspective-1000"
                   initial={{ opacity: 0, rotateY: -90 }}
                   animate={isInView ? { opacity: 1, rotateY: 0 } : {}}
                   transition={{ delay: 0.6 + index * 0.1, duration: 0.6 }}
@@ -108,13 +107,13 @@ const EducationSection = () => {
                   <div className="preserve-3d">
                     <div className="flex items-center justify-between">
                       <div>
-                        <h4 className="text-lg font-semibold text-gray-900">{cert.name}</h4>
-                        <p className="text-teal-600 font-medium">{cert.org}</p>
-                        <p className="text-sm text-gray-500">Issued: {cert.year}</p>
-                        <p className="text-xs text-gray-400 mt-1">ID: {cert.id}</p>
+                        <h4 className="text-lg font-semibold text-foreground">{cert.name}</h4>
+                        <p className="text-primary font-medium">{cert.org}</p>
+                        <p className="text-sm text-muted-foreground">Issued: {cert.year}</p>
+                        <p className="text-xs text-muted-foreground mt-1">ID: {cert.id}</p>
                       </div>
                       <motion.div
-                        className="w-16 h-16 bg-gradient-to-r from-teal-600 to-blue-600 rounded-full flex items-center justify-center"
+                        className="w-16 h-16 bg-gradient-to-r from-primary to-blue-600 rounded-full flex items-center justify-center"
                         whileHover={{ scale: 1.1, rotate: 10 }}
                       >
                         <motion.span

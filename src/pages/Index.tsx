@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import HeroSection from '../components/portfolio/HeroSection';
@@ -33,12 +32,12 @@ const Index = () => {
         className="fixed inset-0 z-0"
         style={{
           background: `linear-gradient(180deg, 
-            rgba(255,255,255,1) 0%, 
-            rgba(20,184,166,0.1) 20%, 
-            rgba(37,99,235,0.1) 40%, 
-            rgba(255,255,255,1) 60%, 
-            rgba(20,184,166,0.05) 80%, 
-            rgba(17,24,39,0.9) 100%)`
+            hsl(var(--background)) 0%, 
+            hsl(240 5.9% 10% / 0.8) 20%, /* Dark blue/gray */
+            hsl(260 5.9% 15% / 0.8) 40%, /* Darker purple/gray */
+            hsl(var(--background)) 60%, 
+            hsl(240 5.9% 10% / 0.7) 80%, 
+            hsl(220 10% 5% / 0.95) 100%)` /* Very dark at the bottom */
         }}
       />
 

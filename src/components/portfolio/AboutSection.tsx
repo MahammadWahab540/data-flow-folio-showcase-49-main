@@ -1,4 +1,3 @@
-
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 
@@ -7,7 +6,7 @@ const AboutSection = () => {
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
-    <div ref={ref} className="min-h-screen flex items-center py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-teal-50 to-blue-50">
+    <div ref={ref} className="min-h-screen flex items-center py-20 px-4 sm:px-6 lg:px-8 bg-background text-foreground">
       <div className="max-w-7xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left column - Timeline */}
@@ -17,12 +16,12 @@ const AboutSection = () => {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">Career Timeline</h2>
+            <h2 className="text-3xl font-bold text-foreground mb-8">Career Timeline</h2>
             
             {/* Timeline container */}
             <div className="relative">
               {/* Central line */}
-              <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-teal-600 to-blue-600"></div>
+              <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary to-blue-600"></div>
               
               {/* Timeline nodes */}
               {[
@@ -38,13 +37,13 @@ const AboutSection = () => {
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ delay: 0.2 + index * 0.2, duration: 0.6 }}
                 >
-                  <div className="w-8 h-8 bg-gradient-to-r from-teal-600 to-blue-600 rounded-full flex items-center justify-center shadow-lg z-10">
-                    <div className="w-3 h-3 bg-white rounded-full"></div>
+                  <div className="w-8 h-8 bg-gradient-to-r from-primary to-blue-600 rounded-full flex items-center justify-center shadow-lg z-10">
+                    <div className="w-3 h-3 bg-background rounded-full"></div>
                   </div>
-                  <div className="ml-6 bg-white p-4 rounded-lg shadow-md border-l-4 border-teal-600">
-                    <div className="font-semibold text-gray-900">{item.title}</div>
-                    <div className="text-sm text-teal-600 font-medium">{item.year}</div>
-                    <div className="text-gray-600 text-sm mt-1">{item.desc}</div>
+                  <div className="ml-6 bg-card p-4 rounded-lg shadow-md border-l-4 border-primary">
+                    <div className="font-semibold text-foreground">{item.title}</div>
+                    <div className="text-sm text-primary font-medium">{item.year}</div>
+                    <div className="text-muted-foreground text-sm mt-1">{item.desc}</div>
                   </div>
                 </motion.div>
               ))}
@@ -59,8 +58,8 @@ const AboutSection = () => {
             transition={{ delay: 0.4, duration: 0.8 }}
           >
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">About Me</h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <h2 className="text-3xl font-bold text-foreground mb-6">About Me</h2>
+              <p className="text-lg text-muted-foreground leading-relaxed">
                 With over 3 years of experience in business analytics, I specialize in transforming 
                 complex data into actionable insights that drive strategic decision-making for 
                 top-tier consulting firms. My expertise spans financial analytics, process 
@@ -77,7 +76,7 @@ const AboutSection = () => {
               ].map((item, index) => (
                 <motion.div
                   key={index}
-                  className="bg-white p-6 rounded-xl shadow-lg text-center border border-gray-100 hover:shadow-xl transition-all duration-300"
+                  className="bg-card p-6 rounded-xl shadow-lg text-center border border-border hover:shadow-xl transition-all duration-300"
                   initial={{ opacity: 0, y: 30, rotateY: -90 }}
                   animate={isInView ? { opacity: 1, y: 0, rotateY: 0 } : {}}
                   transition={{ delay: 0.6 + index * 0.1, duration: 0.6 }}
@@ -89,10 +88,10 @@ const AboutSection = () => {
                   }}
                   style={{ transformStyle: 'preserve-3d' }}
                 >
-                  <div className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-blue-600 mb-2">
+                  <div className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-600 mb-2">
                     {item.metric}
                   </div>
-                  <div className="text-sm text-gray-600">{item.desc}</div>
+                  <div className="text-sm text-muted-foreground">{item.desc}</div>
                 </motion.div>
               ))}
             </div>

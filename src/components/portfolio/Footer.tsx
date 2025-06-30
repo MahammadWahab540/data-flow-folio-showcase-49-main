@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 
@@ -11,12 +10,12 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gray-900 text-white py-8 px-4 sm:px-6 lg:px-8">
+    <footer className="bg-gray-950 text-foreground py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center">
           {/* Copyright */}
           <motion.div
-            className="text-sm text-gray-400 mb-4 md:mb-0"
+            className="text-sm text-muted-foreground mb-4 md:mb-0"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -36,7 +35,7 @@ const Footer = () => {
                 <motion.button
                   key={index}
                   onClick={() => handleNavClick(link)}
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
+                  className="text-muted-foreground hover:text-primary transition-colors text-sm"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -46,13 +45,13 @@ const Footer = () => {
             </div>
 
             {/* Divider */}
-            <div className="w-px h-4 bg-gray-600" />
+            <div className="w-px h-4 bg-border" />
 
             {/* Social Icons */}
             <div className="flex gap-3">
               <motion.a
                 href="#"
-                className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-blue-600 transition-all duration-300"
+                className="w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-muted-foreground hover:text-white hover:bg-primary transition-all duration-300"
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.9 }}
                 aria-label="LinkedIn"
@@ -61,7 +60,7 @@ const Footer = () => {
               </motion.a>
               <motion.a
                 href="#"
-                className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-gray-700 transition-all duration-300"
+                className="w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-muted-foreground hover:text-white hover:bg-gray-700 transition-all duration-300"
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.9 }}
                 aria-label="GitHub"

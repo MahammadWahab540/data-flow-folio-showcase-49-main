@@ -19,10 +19,10 @@ const SkillsSection = () => {
   ];
 
   return (
-    <div ref={ref} className="min-h-screen flex items-center py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <div ref={ref} className="min-h-screen flex items-center py-20 px-4 sm:px-6 lg:px-8 bg-background text-foreground">
       <div className="max-w-7xl mx-auto w-full">
         <motion.h2
-          className="text-4xl font-bold text-center mb-16 text-gray-900"
+          className="text-4xl font-bold text-foreground text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
@@ -40,7 +40,7 @@ const SkillsSection = () => {
           {skills.map((skill, index) => (
             <motion.div
               key={index}
-              className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 text-center group hover:shadow-xl transition-all duration-300"
+              className="bg-card p-6 rounded-xl shadow-lg border border-border text-center group hover:shadow-xl transition-all duration-300"
               initial={{ opacity: 0, y: 50, rotateY: -90 }}
               animate={isInView ? { opacity: 1, y: 0, rotateY: 0 } : {}}
               transition={{ delay: 0.4 + index * 0.1, duration: 0.6 }}
@@ -59,11 +59,11 @@ const SkillsSection = () => {
                 {skill.icon}
               </motion.div>
               
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">{skill.name}</h3>
+              <h3 className="text-xl font-semibold text-foreground mb-4">{skill.name}</h3>
               
-              <div className="relative w-full h-3 bg-gray-200 rounded-full overflow-hidden">
+              <div className="relative w-full h-3 bg-muted rounded-full overflow-hidden">
                 <motion.div
-                  className="absolute top-0 left-0 h-full bg-gradient-to-r from-teal-600 to-blue-600 rounded-full"
+                  className="absolute top-0 left-0 h-full bg-gradient-to-r from-primary to-blue-600 rounded-full"
                   initial={{ width: 0 }}
                   animate={isInView ? { width: `${skill.proficiency}%` } : {}}
                   transition={{ delay: 0.8 + index * 0.1, duration: 1.5, ease: "easeOut" }}
@@ -71,7 +71,7 @@ const SkillsSection = () => {
               </div>
               
               <motion.div
-                className="text-sm text-gray-600 mt-2 font-medium"
+                className="text-sm text-muted-foreground mt-2 font-medium"
                 initial={{ opacity: 0 }}
                 animate={isInView ? { opacity: 1 } : {}}
                 transition={{ delay: 1.2 + index * 0.1 }}
@@ -89,27 +89,27 @@ const SkillsSection = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 1, duration: 0.6 }}
         >
-          <h3 className="text-2xl font-semibold text-gray-900 mb-8">Methodologies & Frameworks</h3>
+          <h3 className="text-2xl font-semibold text-foreground mb-8">Methodologies & Frameworks</h3>
           
           <div className="flex flex-wrap justify-center gap-4">
             {methodologies.map((method, index) => (
               <motion.div
                 key={index}
-                className="bg-gradient-to-r from-teal-50 to-blue-50 px-6 py-3 rounded-full border border-gray-200 flex items-center gap-2 hover:from-teal-100 hover:to-blue-100 transition-all duration-300"
+                className="bg-secondary px-6 py-3 rounded-full border border-border flex items-center gap-2 hover:bg-accent transition-all duration-300"
                 initial={{ opacity: 0, scale: 0 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ delay: 1.2 + index * 0.1, type: "spring", stiffness: 200 }}
                 whileHover={{ scale: 1.05, y: -2 }}
               >
                 <motion.span
-                  className="text-green-600"
+                  className="text-primary"
                   initial={{ scale: 0 }}
                   animate={isInView ? { scale: 1 } : {}}
                   transition={{ delay: 1.4 + index * 0.1, type: "spring", stiffness: 300 }}
                 >
                   ✓
                 </motion.span>
-                <span className="text-gray-700 font-medium">{method}</span>
+                <span className="text-foreground font-medium">{method}</span>
               </motion.div>
             ))}
           </div>

@@ -82,9 +82,9 @@ const ProjectsSection = () => {
   ];
 
   return (
-    <div ref={ref} className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
+    <div ref={ref} className="min-h-screen py-20 px-4 sm:px-6 lg:px-8 bg-background text-foreground">
       {/* Header with gradient background */}
-      <div className="bg-gradient-to-r from-blue-600 to-purple-600 py-16 mb-12 rounded-2xl">
+      <div className="bg-gradient-to-r from-blue-800 to-purple-900 py-16 mb-12 rounded-2xl">
         <motion.div
           className="text-center"
           initial={{ opacity: 0, y: 30 }}
@@ -92,7 +92,7 @@ const ProjectsSection = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl font-bold text-white mb-4">Business Analysis Projects</h2>
-          <p className="text-xl text-blue-100 mb-4">Transforming Business Challenges into Strategic Solutions</p>
+          <p className="text-xl text-blue-200 mb-4">Transforming Business Challenges into Strategic Solutions</p>
           <div className="w-24 h-1 bg-white mx-auto rounded-full"></div>
         </motion.div>
       </div>
@@ -104,7 +104,6 @@ const ProjectsSection = () => {
             <motion.div
               key={index}
               className="group"
-              // Removed initial={{ opacity: 0 }} to make it visible by default
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ delay: index * 0.15, duration: 0.8 }}
             >
@@ -112,22 +111,21 @@ const ProjectsSection = () => {
                 {/* Left content */}
                 <motion.div
                   className={`space-y-6 ${index % 2 === 1 ? 'lg:order-2' : ''}`}
-                  // Removed initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ delay: 0.2 + index * 0.1, duration: 0.8 }}
                 >
                   <div>
-                    <span className="inline-block bg-gradient-to-r from-teal-100 to-blue-100 text-teal-800 px-3 py-1 rounded-full text-sm font-medium mb-3">
+                    <span className="inline-block bg-gradient-to-r from-primary/20 to-blue-600/20 text-primary px-3 py-1 rounded-full text-sm font-medium mb-3">
                       Project {index + 1}
                     </span>
-                    <h3 className="text-3xl font-bold text-gray-900 mb-2">{project.title}</h3>
-                    <p className="text-lg text-teal-600 font-medium mb-4">{project.role}</p>
-                    <p className="text-gray-600 text-lg leading-relaxed">{project.summary}</p>
+                    <h3 className="text-3xl font-bold text-foreground mb-2">{project.title}</h3>
+                    <p className="text-lg text-primary font-medium mb-4">{project.role}</p>
+                    <p className="text-muted-foreground text-lg leading-relaxed">{project.summary}</p>
                   </div>
 
                   {/* Key Outcomes */}
                   <div>
-                    <h4 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+                    <h4 className="text-xl font-semibold text-foreground mb-4 flex items-center">
                       <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
                       Key Business Outcomes
                     </h4>
@@ -135,20 +133,19 @@ const ProjectsSection = () => {
                       {project.outcomes.map((outcome, outcomeIndex) => (
                         <motion.li
                           key={outcomeIndex}
-                          className="flex items-start group-hover:text-gray-800 transition-colors"
-                          // Removed initial={{ opacity: 0, x: -20 }}
+                          className="flex items-start group-hover:text-foreground transition-colors"
                           animate={isInView ? { opacity: 1, x: 0 } : {}}
                           transition={{ delay: 0.4 + index * 0.1 + outcomeIndex * 0.1, duration: 0.6 }}
                         >
                           <motion.span
-                            className="text-green-600 mr-3 mt-1 text-lg font-bold"
+                            className="text-green-500 mr-3 mt-1 text-lg font-bold"
                             initial={{ scale: 0 }}
                             animate={isInView ? { scale: 1 } : {}}
                             transition={{ delay: 0.6 + index * 0.1 + outcomeIndex * 0.1, type: "spring" }}
                           >
                             ▲
                           </motion.span>
-                          <span className="text-gray-700 font-medium">{outcome}</span>
+                          <span className="text-muted-foreground font-medium">{outcome}</span>
                         </motion.li>
                       ))}
                     </ul>
@@ -156,20 +153,19 @@ const ProjectsSection = () => {
 
                   {/* Technologies & Tools */}
                   <div>
-                    <h4 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+                    <h4 className="text-xl font-semibold text-foreground mb-4 flex items-center">
                       <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
                       Technologies & Tools
                     </h4>
                     <motion.div
                       className="flex flex-wrap gap-3"
-                      // Removed initial={{ opacity: 0, y: 20 }}
                       animate={isInView ? { opacity: 1, y: 0 } : {}}
                       transition={{ delay: 0.6 + index * 0.1, duration: 0.8 }}
                     >
                       {project.technologies.map((tech, techIndex) => (
                         <motion.span
                           key={techIndex}
-                          className="px-4 py-2 bg-gradient-to-r from-gray-100 to-gray-200 text-gray-800 rounded-full text-sm font-medium border border-gray-300 hover:border-teal-300 hover:bg-gradient-to-r hover:from-teal-50 hover:to-blue-50 transition-all cursor-default"
+                          className="px-4 py-2 bg-secondary text-foreground rounded-full text-sm font-medium border border-border hover:border-primary hover:bg-primary/20 transition-all cursor-default"
                           initial={{ opacity: 0, scale: 0 }}
                           animate={isInView ? { opacity: 1, scale: 1 } : {}}
                           transition={{ delay: 0.8 + index * 0.1 + techIndex * 0.05, type: "spring" }}
@@ -183,12 +179,11 @@ const ProjectsSection = () => {
 
                   {/* CTA Button */}
                   <motion.div
-                    // Removed initial={{ opacity: 0, y: 20 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ delay: 0.8 + index * 0.1, duration: 0.8 }}
                   >
                     <Button 
-                      className="bg-gradient-to-r from-teal-600 to-blue-600 hover:from-teal-700 hover:to-blue-700 text-white px-6 py-3"
+                      className="bg-gradient-to-r from-primary to-blue-600 hover:from-primary/80 hover:to-blue-700 text-white px-6 py-3"
                       size="lg"
                     >
                       View Case Study
@@ -199,37 +194,36 @@ const ProjectsSection = () => {
                 {/* Right content - Project visualization */}
                 <motion.div
                   className={`flex items-center justify-center ${index % 2 === 1 ? 'lg:order-1' : ''}`}
-                  // Removed initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ delay: 0.4 + index * 0.1, duration: 0.8 }}
                 >
-                  <div className="w-full max-w-lg h-96 bg-gradient-to-br from-gray-50 to-gray-150 rounded-xl flex items-center justify-center shadow-xl relative overflow-hidden border border-gray-200">
+                  <div className="w-full max-w-lg h-96 bg-card rounded-xl flex items-center justify-center shadow-xl relative overflow-hidden border border-border">
                     {/* Project mockup content */}
                     <div className="text-center p-8">
-                      <div className="w-32 h-32 bg-gradient-to-r from-teal-500 to-blue-600 rounded-xl mx-auto mb-6 flex items-center justify-center shadow-lg">
+                      <div className="w-32 h-32 bg-gradient-to-r from-primary to-blue-600 rounded-xl mx-auto mb-6 flex items-center justify-center shadow-lg">
                         <span className="text-white text-4xl">
                           {index === 0 ? '📊' : index === 1 ? '📈' : index === 2 ? '📦' : index === 3 ? '⚙️' : index === 4 ? '🎯' : '🛡️'}
                         </span>
                       </div>
-                      <h4 className="text-lg font-semibold text-gray-800 mb-2">Interactive Dashboard</h4>
-                      <p className="text-sm text-gray-600">Real-time Analytics & Insights</p>
+                      <h4 className="text-lg font-semibold text-foreground mb-2">Interactive Dashboard</h4>
+                      <p className="text-sm text-muted-foreground">Real-time Analytics & Insights</p>
                       
                       {/* Metrics display */}
                       <div className="mt-4 space-y-2">
-                        <div className="flex justify-between text-xs text-gray-500">
+                        <div className="flex justify-between text-xs text-muted-foreground">
                           <span>Performance</span>
                           <span>95%</span>
                         </div>
-                        <div className="w-full bg-gray-200 rounded-full h-1">
-                          <div className="bg-gradient-to-r from-teal-500 to-blue-500 h-1 rounded-full w-[95%]"></div>
+                        <div className="w-full bg-muted rounded-full h-1">
+                          <div className="bg-gradient-to-r from-primary to-blue-500 h-1 rounded-full w-[95%]"></div>
                         </div>
                       </div>
                     </div>
                     
                     {/* Floating decorative elements */}
-                    <div className="absolute top-4 right-4 w-3 h-3 bg-teal-400 rounded-full opacity-60 animate-pulse"></div>
+                    <div className="absolute top-4 right-4 w-3 h-3 bg-primary rounded-full opacity-60 animate-pulse"></div>
                     <div className="absolute bottom-6 left-4 w-2 h-2 bg-blue-500 rounded-full opacity-40 animate-bounce"></div>
-                    <div className="absolute top-1/2 right-6 w-4 h-4 bg-purple-400 rounded-full opacity-30 animate-pulse"></div>
+                    <div className="absolute top-1/2 right-6 w-4 h-4 bg-purple-500 rounded-full opacity-30 animate-pulse"></div>
                   </div>
                 </motion.div>
               </div>
@@ -239,26 +233,26 @@ const ProjectsSection = () => {
 
         {/* Call to action section */}
         <motion.div
-          className="text-center py-20 mt-16 bg-gradient-to-r from-gray-50 to-blue-50 rounded-2xl"
+          className="text-center py-20 mt-16 bg-card rounded-2xl border border-border"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 1.2, duration: 0.8 }}
         >
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">Ready to Transform Your Business?</h3>
-          <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
+          <h3 className="text-2xl font-bold text-foreground mb-4">Ready to Transform Your Business?</h3>
+          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
             Let's discuss how data-driven analysis and strategic insights can drive your next business transformation project.
           </p>
           <div className="space-x-4">
             <Button 
               size="lg"
-              className="bg-gradient-to-r from-teal-600 to-blue-600 hover:from-teal-700 hover:to-blue-700 text-white px-8 py-4 text-lg"
+              className="bg-gradient-to-r from-primary to-blue-600 hover:from-primary/80 hover:to-blue-700 text-white px-8 py-4 text-lg"
             >
               View All Case Studies
             </Button>
             <Button 
               size="lg"
               variant="outline"
-              className="border-2 border-teal-600 text-teal-600 hover:bg-teal-50 px-8 py-4 text-lg"
+              className="border-2 border-primary text-primary hover:bg-primary/10 px-8 py-4 text-lg"
             >
               Schedule Consultation
             </Button>
