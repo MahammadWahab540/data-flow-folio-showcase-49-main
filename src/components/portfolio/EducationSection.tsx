@@ -1,4 +1,4 @@
-import React, { useRef } => 'react';
+import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 
 const EducationSection = () => {
